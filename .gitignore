@@ -1,0 +1,62 @@
+# Environnements virtuels
+.venv/
+env/
+venv/
+
+# Données locales
+data/
+Cat_Dog_data/
+*.zip
+*.tar
+*.tar.gz
+*.jpg
+*.jpeg
+*.pt
+*.pth
+*.pkl
+
+# Modèles (checkpoints)         
+
+*.pt
+*.pth
+*.pkl
+*.h5
+checkpoints/
+runs/
+
+# Résultats et figures générées
+figures/
+results/
+
+# Caches & temporaires 
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.log
+logs/
+Thumbs.db
+.DS_Store
+
+
+# VSCode et IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs divers
+logs/
+*.log
+
+# Exports temporaires
+*.csv
+*.npy
+*.npz
+
+
+
+
+
