@@ -119,7 +119,7 @@ Chaque expérience a été menée sur 8 époques, avec suivi de la loss, accurac
 
 ### A. Optimiseur **Adam**
 
-![Courbes Adam](a3239c10-4d7c-4375-9a10-8bf1e97d5b28.png)
+![Courbes Adam](figures/courbes_adam.png)
 
 - **Scratch** : convergence lente, accuracy plafonnant autour de 0.70, rappel limité (~0.50).  
 - **Transfer** : convergence immédiate, accuracy ~0.97 dès la 1ʳᵉ époque, précision/recall ≈ 1.0.  
@@ -130,7 +130,7 @@ Chaque expérience a été menée sur 8 époques, avec suivi de la loss, accurac
 
 ### B. Optimiseur **SGD**
 
-![Courbes SGD](31d209a4-9ca7-4912-89bb-14a59d5de986.png)
+![Courbes SGD](figures/courbes_sgd.png)
 
 - **Scratch** : difficulté à apprendre, accuracy instable autour de 0.55–0.60, rappel très faible (<0.25).  
 - **Transfer** : performance nettement meilleure (accuracy ~0.98, précision et rappel >0.95).  
@@ -147,19 +147,24 @@ Chaque expérience a été menée sur 8 époques, avec suivi de la loss, accurac
 | **B — Transfer (ResNet18)** | Adam       | ~0.06     | ~0.98    | ~0.97–0.99     | ~0.97–0.98  |
 | **B — Transfer (ResNet18)** | SGD        | ~0.05–0.07| ~0.97–0.98| ~0.96–0.98    | ~0.97–0.98  |
 
+Observation principal :
+ - A — Scratch Adam : Apprentissage lent mais progressif
+ - A — Scratch SGD : Très faible rappel, modèle déséquilibré
+ - B — Transfer (ResNet18) Adam : Convergence rapide, performance quasi parfaite
+ - B — Transfer (ResNet18) SGD : Très bon modèle, légèrement moins stable
 ---
 
 ### Matrices de confusion
 
 #### A. CNN From Scratch
-![Confusion Matrix Scratch](153816f1-d465-4cc2-91a1-b87579b2955e.png)
+![Confusion Scratch](figures/cm_scratch.png)
 
 - Les **chats** sont relativement bien reconnus (1153/1250).  
 - Mais beaucoup de **chiens** sont mal classés comme chats (755 erreurs).  
 - Cela explique le **recall limité (~0.50)**.
 
 #### B. Transfer Learning (ResNet18)
-![Confusion Matrix Transfer](81b185c4-3cc9-4ad7-ac60-626532c67261.png)
+![Confusion Transfer](figures/cm_transfer.png)
 
 - Diagonale quasi parfaite : 1228/1250 pour chaque classe.  
 - Seulement 22 erreurs par classe.  
